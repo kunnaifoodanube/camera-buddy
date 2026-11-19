@@ -385,7 +385,7 @@ table.delta .n{text-align:center;white-space:nowrap}
 
 <div class="busy" id="busy" role="status" aria-live="polite"><div class="busy-card">
   <div id="busySticker"></div>
-  <b id="busyTitle">บัดดี้กำลังดูรูป...</b>
+  <b id="busyTitle">รอแป๊บนึงนะคะ~</b>
   <p class="busy-sub" id="busySub"></p>
   <div class="pbar"><span class="bar" role="progressbar" aria-label="ความคืบหน้า" id="busyBarWrap"><i id="busyBar" style="width:10%"></i></span><span id="busyPct"></span></div>
   <ul class="prog" id="busySteps"></ul>
@@ -1448,7 +1448,7 @@ if (typeof module !== "undefined") module.exports = PCPrinciples;
 ;
 /* Camera Buddy — UI v0.4 (Design Implementation Handoff 2026-11-19: Minimal Photography, Kanit + Noto Sans Thai) */
 (() => {
-  const APP_VERSION = "0.5.4";
+  const APP_VERSION = "0.5.5";
   const $ = (s, el = document) => el.querySelector(s);
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const I = CBIcons.icon, D = PCCoach.DIMS, RX = CBReactions;
@@ -1471,7 +1471,7 @@ if (typeof module !== "undefined") module.exports = PCPrinciples;
     if (!on) { b.classList.remove("on"); clearInterval(busyTimer); return; }
     b.classList.add("on");
     $("#busySticker").innerHTML = RX.sticker("analyze", 150);
-    $("#busyTitle").textContent = opts.title || RX.R.analyze.text;
+    $("#busyTitle").textContent = opts.title || "รอแป๊บนึงนะคะ~"; // sticker already says "กำลังดูรูป..." (owner 2026-11-19)
     const names = opts.steps || ["อ่านข้อมูลกล้อง", "วัดแสง ความคม สี และนอยส์", "บัดดี้ใช้ AI ดูภาพ"];
     const si = Math.min(step, names.length - 1), pct = Math.round(((si + 0.5) / names.length) * 100);
     $("#busySub").textContent = names[si] + "...";
