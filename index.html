@@ -392,6 +392,9 @@ table.delta .n{text-align:center;white-space:nowrap}
 .pc-b{display:grid;gap:4px;padding:10px 12px 12px;font-size:15px;line-height:1.45}
 .pc-b b{font-family:var(--font-display);font-weight:600;font-size:16px}
 .pc-b .clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+/* v0.6.2 — home never lets the buttons cover the title on short phones: stack instead of overlap, scroll if needed */
+.home{display:flex;flex-direction:column;height:auto;min-height:100dvh;overflow:visible}
+.home-actions{position:relative;bottom:auto;margin-top:auto;padding:24px 24px calc(var(--tabbar-h) + 16px)}
 </style>
 </head>
 <body>
@@ -1486,7 +1489,7 @@ if (typeof module !== "undefined") module.exports = PCPrinciples;
 ;
 /* Camera Buddy — UI v0.4 (Design Implementation Handoff 2026-11-19: Minimal Photography, Kanit + Noto Sans Thai) */
 (() => {
-  const APP_VERSION = "0.6.1";
+  const APP_VERSION = "0.6.2";
   const $ = (s, el = document) => el.querySelector(s);
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const I = CBIcons.icon, D = PCCoach.DIMS, RX = CBReactions;
