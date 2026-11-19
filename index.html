@@ -1486,7 +1486,7 @@ if (typeof module !== "undefined") module.exports = PCPrinciples;
 ;
 /* Camera Buddy — UI v0.4 (Design Implementation Handoff 2026-11-19: Minimal Photography, Kanit + Noto Sans Thai) */
 (() => {
-  const APP_VERSION = "0.6.0";
+  const APP_VERSION = "0.6.1";
   const $ = (s, el = document) => el.querySelector(s);
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const I = CBIcons.icon, D = PCCoach.DIMS, RX = CBReactions;
@@ -2080,7 +2080,7 @@ if (typeof module !== "undefined") module.exports = PCPrinciples;
         ${k === "puter" ? `<div class="li" style="display:grid;gap:8px"><div class="lh">โมเดล AI</div><select class="field" id="puModel"><option value="">ค่าเริ่มต้นของ Puter</option>${PCCoach.AI.puterModel ? `<option value="${esc(PCCoach.AI.puterModel)}" selected>${esc(PCCoach.AI.puterModel)}</option>` : ""}</select>
           <details class="small"><summary>ยอดเครดิตจาก Puter</summary><pre id="puUsage" style="white-space:pre-wrap;font-size:13px;max-height:200px;overflow:auto">กำลังโหลด…</pre></details></div>` : ""}
       </div>` : ""}
-      <div class="set"><div class="li privacy"><span class="ib">${I("info", 22)}</span><div><div class="lh">รูปไม่ถูกเก็บบนเซิร์ฟเวอร์</div><ul class="bul small" style="margin-top:4px"><li>ภาพอยู่ในหน้านี้เท่านั้น บัดดี้ไม่เก็บไว้บนเซิร์ฟเวอร์</li><li>เมื่อใช้ AI ภาพที่ย่อเหลือไม่เกิน 1280 px และตัดข้อมูลกล้อง/ตำแหน่งออกแล้ว จะถูกส่งให้ AI ดูตามเงื่อนไขของผู้ให้บริการ</li><li>"ผลงาน" เก็บในเบราว์เซอร์ของเครื่องนี้เท่านั้น</li><li>การนำภาพไปใช้ทดสอบหรือวิจัย ต้องได้รับความยินยอมก่อนเสมอ</li></ul></div></div></div>
+      <div class="set"><div class="li privacy"><span class="ib">${I("info", 22)}</span><div><div class="lh">รูปไม่ถูกเก็บบนเซิร์ฟเวอร์</div><ul class="bul small" style="margin-top:4px"><li>ภาพอยู่ในหน้านี้เท่านั้น บัดดี้ไม่เก็บไว้บนเซิร์ฟเวอร์</li><li>เมื่อใช้ AI ภาพที่ย่อเหลือไม่เกิน 1280 px และตัดข้อมูลกล้อง/ตำแหน่งออกแล้ว จะถูกส่งให้ AI ดูตามเงื่อนไขของผู้ให้บริการ</li><li>"ผลงาน" เก็บในเบราว์เซอร์ของเครื่องนี้เท่านั้น</li><li>การนำภาพไปใช้ทดสอบหรือวิจัย ต้องได้รับความยินยอมก่อนเสมอ</li></ul><a href="privacy.html" target="_blank" rel="noopener" style="display:inline-block;margin-top:6px;font-weight:600">อ่านนโยบายความเป็นส่วนตัว</a></div></div></div>
       <button class="btn btn-danger btn-block" id="pWipe" style="background:var(--cb-cream);margin-top:2px">${I("trash", 20)}ลบภาพ ผลวิเคราะห์ และผลงานทั้งหมด</button>
       <div class="sec-title">สำหรับผู้ทดสอบ</div><div class="set"><div class="li"><button class="btn btn-outline btn-block" id="pLogs">${I("copy", 20)}คัดลอกบันทึกการทดสอบ (${state.logs.length})</button></div></div>
       ${promoCard()}
