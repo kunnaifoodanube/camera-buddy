@@ -1,7 +1,7 @@
 /* Camera Buddy service worker: lets the app be installed and opened from the home screen.
    Network first (so students always get the newest version), cached copy only when offline.
    Only the app's own files are cached — never the user's photos. */
-const CACHE = "camera-buddy-v1";
+const CACHE = "camera-buddy-v2"; // v0.7.0 Natural Light
 const SHELL = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png"];
 self.addEventListener("install", (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });
